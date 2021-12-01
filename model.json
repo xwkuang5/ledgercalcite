@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultSchema": "<calcite_ledger_schema_name>",
+  "schemas": [
+    {
+      "name": "<calcite_ledger_schema_name>",
+      "type": "custom",
+      "factory": "org.apache.calcite.adapter.csv.CsvSchemaFactory",
+      "operand": {
+        "directory": "<calcite_ledger_schema_dir>"
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 #!/bin/bash
-# TODO(louiskuang): consider switching to a python script and add unit tests.
-# TODO(louiskuang): support the notes column %(quoted(join(note | xact.note))).
-# TODO(louiskuang): make filename part of txn id.
+# TODO(xwkuang5): consider switching to a python script and add unit tests.
+# TODO(xwkuang5): support the notes column %(quoted(join(note | xact.note))).
+# TODO(xwkuang5): make filename part of txn id.
 
 function join_by { local d=${1-} f=${2-}; if shift 2; then printf %s "$f" "${@/#/$d}"; fi; }
 
@@ -30,7 +30,7 @@ NUM_USER_VISIBLE_FIELDS=7
 USER_VISIBLE_FIELD_START_IDX=2
 
 # Calcite header.
-HEADER="TXN_ID:long,TXN_DATE:date,CODE:string,PAYEE:string,ACCOUNT:string,COMMODITY:string,QUANTITY:numeric,STATUS:string"
+HEADER="TXN_ID:long,TXN_DATE:date,CODE:string,PAYEE:string,ACCOUNT:string,COMMODITY:string,QUANTITY:\"decimal(18,2)\",STATUS:string"
 
 # Truncate the output.
 : > $2
