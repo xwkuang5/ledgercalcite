@@ -6,7 +6,7 @@ Query ledger with SQL.
 * [Usage](#usage)
   * [Usage with Docker](#usage-with-docker) 
   * [Usage with locally installed ledger](#usage-with-locally-installed-ledger)
-* [Example](#example)
+* [Example SQL Queries](#example-sql-queries)
 * [Dependencies](#dependencies) 
 
 ## Platform
@@ -75,7 +75,7 @@ Arguments of `ledger_sql.sh`:
 <scratch_dir> : absolute path to a directory that can be used as scratch
 ```
 
-## Example
+## Example SQL Queries
 List the tables available.
 ```
 0: jdbc:calcite:model=/tmp/scratch/model.json> !tables
