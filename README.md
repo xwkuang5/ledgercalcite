@@ -1,6 +1,14 @@
 # ledgercalcite
 Query ledger with SQL.
 
+## Table of Contents  
+* [Platform](#platform)
+* [Usage](#usage)
+  * [Usage with Docker](#usage-with-docker) 
+  * [Usage with locally installed ledger](#usage-with-locally-installed-ledger)
+* [Example](#example)
+* [Dependencies](#dependencies) 
+
 ## Platform
 
 Unix-like systems (tested on Linux)
