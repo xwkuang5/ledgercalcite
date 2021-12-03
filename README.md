@@ -11,7 +11,7 @@ Query ledger with SQL.
 
 ## Platform
 
-Unix-like systems (tested on Linux)
+linux/amd64
 
 ## Usage
 
