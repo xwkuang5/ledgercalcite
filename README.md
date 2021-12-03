@@ -7,15 +7,64 @@ Unix-like systems (tested on Linux)
 
 ## Usage
 
+### Usage with Docker
+
+You can run the following to start a sql shell with `example_journal` (copied from the [Ledger manual](https://www.ledger-cli.org/3.0/doc/ledger3.html#Example-Journal-File)) imported as a table named `LEDGER`:
+
+```
+docker run \
+    -it xiaoweikuang/ledgercalcite:latest \
+    /home/ledgercalcite/ledger_sql_for_docker.sh \
+    /home/ledgercalcite/example_journal
+    /tmp/scratch
+```
+
+To start a sql shell with your own ledger file, run the following command (assuming the abolute path of your ledger file is `/home/foo/bar`):
+```
+docker run \
+    -v /home/foo:/home/ledgercalcite/data -it xiaoweikuang/ledgercalcite:latest \
+    /home/ledgercalcite/ledger_sql_for_docker.sh \
+    /home/ledgercalcite/data/bar \
+    /tmp/scratch
+```
+
+The data will be loaded as a table named `LEDGER`.
+
+Arguments of `ledger_sql_for_docker.sh`:
+
+```
+./ledger_sql_for_docker.sh <ledger> <scratch_dir>
+
+<ledger> : absolute path to the ledger file in the container
+<scratch_dir> : absolute path to a directory that can be used as scratch in the container
+```
+
+### Usage with locally installed Ledger
 Please ensure that [ledger](https://www.ledger-cli.org/) is installed on your machine. See https://www.ledger-cli.org/download.html for how to install ledger on your platform.
 
-Run the following commands to start a sql shell with `example_ledger` (copied from the [Ledger manual](https://www.ledger-cli.org/3.0/doc/ledger3.html#Example-Journal-File)) imported as a table named `LEDGER`.
+Run the following commands to start a sql shell with `example_journal` (copied from the [Ledger manual](https://www.ledger-cli.org/3.0/doc/ledger3.html#Example-Journal-File)) imported as a table named `LEDGER`.
+
 ```
 git clone https://github.com/xwkuang5/ledgercalcite.git
 
 cd ledgercalcite
 
-./ledger_sql.sh example_ledger /tmp/scratch
+./ledger_sql.sh example_journal /tmp/scratch
+```
+
+To start a sql shell with your own ledger file, run the following command (assuming the abolute path of your ledger file is `/home/foo/bar`):
+
+```
+./ledger_sql.sh /home/foo/bar /tmp/scratch
+```
+
+Arguments of `ledger_sql.sh`:
+
+```
+./ledger_sql.sh <ledger> <scratch_dir>
+
+<ledger> : absolute path to the ledger file 
+<scratch_dir> : absolute path to a directory that can be used as scratch
 ```
 
 ## Example
@@ -75,6 +124,7 @@ Find the balances of all the expenses accounts:
 ## Dependencies
 
 * [Apache Calcite](https://github.com/apache/calcite)
+* [Docker](https://www.docker.com)
 * java (11 or later)
 * [ledger](https://www.ledger-cli.org/)
 * git
