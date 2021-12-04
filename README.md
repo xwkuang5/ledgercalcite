@@ -8,6 +8,7 @@ Query ledger with SQL.
   * [Usage with locally installed ledger](#usage-with-locally-installed-ledger)
 * [Example SQL Queries](#example-sql-queries)
 * [Dependencies](#dependencies) 
+* [Resources](#resources)
 
 ## Platform
 
@@ -136,3 +137,7 @@ Find the balances of all the expenses accounts:
 * java (11 or later)
 * [ledger](https://www.ledger-cli.org/)
 * git
+
+## Resources
+* [Calcite SQL dialect](https://calcite.apache.org/docs/reference.html)
+* Relevant Calcite PR: [CALCITE-4841](https://issues.apache.org/jira/browse/CALCITE-4841)
