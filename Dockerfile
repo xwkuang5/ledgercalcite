@@ -24,5 +24,3 @@ COPY example_journal /home/ledgercalcite/
 COPY model.json /home/ledgercalcite/
 
 WORKDIR /home/ledgercalcite
-
-# Use docker run -it ledgercalcite /home/ledgercalcite/ledger_sql_for_docker.sh /tmp/scratch example_journal
