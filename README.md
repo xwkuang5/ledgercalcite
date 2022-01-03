@@ -24,7 +24,7 @@ You can run the following to start a sql shell with `example_journal` (copied fr
 docker run \
     -it xiaoweikuang/ledgercalcite:latest \
     /home/ledgercalcite/ledger_sql_for_docker.sh \
-    /home/ledgercalcite/example_journal
+    /home/ledgercalcite/example_journal \
     /tmp/scratch
 ```
 
